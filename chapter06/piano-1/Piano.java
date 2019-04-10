@@ -22,21 +22,32 @@ public class Piano extends World
     public Piano() 
     {
         super(800, 340, 1);
-        
+
         //Start tracking frames
         frames = 0;
-        
+
     }
-    
+
     /**
      * Act - called repeatedly to create the animation
      */
     public void act()
     {
+        //Every second say hello to the next person in the list.
+        if ((frames % 60 == 0) && (frames / 60 < 10))
+        {
+            showText("Hello" + studentNames[ frames / 60 ], 400, 170);
+        }
+
         //Keep track of frames
         frames += 1;
-        
+
         //Show current frame
         showText("" + frames, 100, 100);
+        
+        if (frames == 600)
+        {
+            Greenfoot.stop();
+        }
     }
 }
