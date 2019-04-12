@@ -3,10 +3,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
 public class Key extends Actor
 {
     /**
+     * Instance variable
+     */
+    //Tracks whether the piano down image is already set or not
+    private boolean isDown;
+    
+    
+    /**
      * Create a new key.
      */
     public Key()
     {
+        //Key begins in the up position
+        isDown = false;
     }
 
     /**
@@ -14,13 +23,15 @@ public class Key extends Actor
      */
     public void act()
     {
-        if (Greenfoot.isKeyDown("g"))
+        if (isDown == false && Greenfoot.isKeyDown("g"))
         {
             setImage("white-key-down.png");
+            isDown = true;
         }
-        else
+        if (isDown == true && Greenfoot.isKeyDown("g") == false)
         {
             setImage("white-key.png");
+            isDown = false;
         }
     }
 }
