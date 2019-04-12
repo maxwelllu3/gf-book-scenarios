@@ -7,8 +7,7 @@ public class Key extends Actor
      */
     //Tracks whether the piano down image is already set or not
     private boolean isDown;
-    
-    
+
     /**
      * Create a new key.
      */
@@ -16,6 +15,7 @@ public class Key extends Actor
     {
         //Key begins in the up position
         isDown = false;
+        
     }
 
     /**
@@ -27,12 +27,21 @@ public class Key extends Actor
         {
             setImage("white-key-down.png");
             isDown = true;
+            play();
         }
         if (isDown == true && Greenfoot.isKeyDown("g") == false)
         {
             setImage("white-key.png");
             isDown = false;
         }
+    }
+    
+    /**
+     * Play the note of this key
+     */
+    public void play()
+    {
+        Greenfoot.playSound("3a.wav");
     }
 }
 
