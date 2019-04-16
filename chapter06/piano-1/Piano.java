@@ -38,7 +38,7 @@ public class Piano extends World
     {
         //This block of code runs once per second till the end of the array.
         //whiteKeys array
-        if (frames % 60 == 0 && frames / 60 < 10)
+        if (frames % 60 == 0 && frames / 60 < whiteKeys.length)
         {
             //showText("Hello" + studentNames[ frames / 60 ], 400, 170);
         }
@@ -49,9 +49,5 @@ public class Piano extends World
         //Show current frame
         showText("" + frames, 100, 100);
         
-        if (frames == 600)
-        {
-            //Greenfoot.stop();
-        }
     }
 }
