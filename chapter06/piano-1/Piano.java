@@ -38,16 +38,21 @@ public class Piano extends World
     {
         //This block of code runs once per second till the end of the array.
         //whiteKeys array
+        int position = frames / 60;
         if (frames % 60 == 0 && frames / 60 < whiteKeys.length)
         {
-            //showText("Hello" + studentNames[ frames / 60 ], 400, 170);
+             //Assemble the piano by creating each key one by one
+            Key anotherKey = new Key(whiteKeys[position], 
+            whiteNotes[position]);
+            addObject(anotherKey, 54 + position * 63, 140);
+            //showText("Array index is: " + position, 400, 250);
         }
 
         //Keep track of frames
         frames += 1;
 
         //Show current frame
-        showText("" + frames, 100, 100);
+        //showText("" + frames, 100, 100);
         
     }
 }
