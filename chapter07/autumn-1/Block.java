@@ -1,5 +1,5 @@
 import greenfoot.*;
-
+import java.util.List;
 /**
  * A block that bounces back and forth across the screen.
  * 
@@ -44,10 +44,14 @@ public class Block extends Actor
      */
     private void checkMouseClick()
     {
-        if (Greenfoot.mouseClicked(this)) 
+        if (Greenfoot.mouseClicked(null)) 
         {
             World myWorld = getWorld();
-            myWorld.showText("clicked mouse", 200, 200);
+            List<Leaf> leaves = myWorld.getObjects(Leaf.class);
+            for (Leaf leaf : leaves)
+            {
+                leaf.changeImage();
+            }
         }
     }
     
