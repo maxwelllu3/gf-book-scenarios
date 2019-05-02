@@ -44,9 +44,10 @@ public class Block extends Actor
      */
     private void checkMouseClick()
     {
-        if (Greenfoot.mouseClicked(null)) 
+        if (Greenfoot.mouseClicked(this)) 
         {
-            // do this when the mouse is clicked. currently: nothing.
+            World myWorld = getWorld();
+            myWorld.showText("clicked mouse", 200, 200);
         }
     }
     
