@@ -13,7 +13,7 @@ public class MyWorld extends World
      */
     public MyWorld()
     {    
-        super(600, 400, 1);
+        super(900, 600, 1);
         setUp();
     }
     
@@ -22,6 +22,14 @@ public class MyWorld extends World
      */
     private void setUp()
     {
-        addObject(new Block(), 300, 200);
+        addObject(new Block(), 450, 300);
+        
+        for (int i = 1; i <= 18; i += 1)
+        {
+            Leaf aLeaf = new Leaf();
+            int x = Greenfoot.getRandomNumber(getWidth());
+            int y = Greenfoot.getRandomNumber(getHeight());
+            addObject(aLeaf, x, y);
+        }
     }
 }

@@ -30,7 +30,11 @@ public class MyWorld extends World
             addObject( new Leaf(), x, y );
             i++;
         }
-        
-        addObject(new Block(), 300, 200);
+        while (i<38) {
+            int x = Greenfoot.getRandomNumber(getWidth());
+            int y = Greenfoot.getRandomNumber(getHeight());
+            addObject( new Apple(), x, y );
+            i++;
+        }
     }
 }

@@ -35,29 +35,16 @@ public class Piano extends World
     {
         super(800, 340, 1);
 
-        // First draw all of the white piano keys on the screen
-        for (int index = 0; index < whiteKeys.length; index += 1)
+        
+    }
+    
+    public void act()
+    {
+        int i = 0;
+        while (i < 12)
         {
-            // Create a new Key object
-            Key newKey = new Key(whiteKeys[index], whiteNotes[index], true);
-
-            // Add the key object to the scenario
-            addObject(newKey, 54 + 63 * index, 140);
-        }
-
-        // Now draw all of the black piano keys on the screen
-        for (int index = 0; index < blackKeys.length; index += 1)
-        {
-            // Only add a black key if there is a computer keyboard key
-            // set in the blackKeys array at this index
-            if (blackKeys[index] != "")
-            {
-                // Create a new black Key object
-                Key newKey = new Key(blackKeys[index], blackNotes[index], false);
-
-                // Add the key object to the scenario
-                addObject(newKey, 85 + 63 * index, 86);
-            }
+            addObject (new Key ("g", "3a", true), i*63 + 54, 140);
+            i = i + 1;
         }
     }
 

@@ -11,7 +11,6 @@ public class Leaf extends Actor
     private int speed;
     GreenfootImage img1 = new GreenfootImage("leaf-green.png");
     GreenfootImage img2 = new GreenfootImage("leaf-brown.png");
-    
     /**
      * Create the leaf.
      */
@@ -38,6 +37,11 @@ public class Leaf extends Actor
         {
             turn(Greenfoot.getRandomNumber(5) - 2);   // -2 to 2
         }
+        
+        if (Greenfoot.mouseClicked(null)) 
+        {
+            changeImage();
+        }
     }
     
     /**
@@ -54,4 +58,5 @@ public class Leaf extends Actor
             setImage(img1);
         }
     }
+
 }
